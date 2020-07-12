@@ -1,6 +1,6 @@
 export interface WebsiteImageModel {
   id?: string
-  link: string
+  url: string
   localImagesPath?: string[]
   webImagesPath?: string[]
 }

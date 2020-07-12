@@ -7,7 +7,7 @@ import faker from 'faker'
 import { FetchImagesByUrl } from './fetch-images-by-url'
 
 const fakeWebsiteModel: WebsiteImageModel = {
-  link: faker.internet.url(),
+  url: faker.internet.url(),
   id: faker.random.uuid(),
   localImagesPath: [faker.internet.url()],
   webImagesPath: [faker.internet.url()]
