@@ -3,10 +3,15 @@
 
 module.exports = {
   roots: ['<rootDir>/src'],
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'], // local onde os arquivos estarao
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts',
+    '!**/protocols/**',
+    '!**/test/**'
+  ],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
-  } 
-};
+  },
+  testTimeout: 30000
+}

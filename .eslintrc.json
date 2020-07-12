@@ -1,24 +1,12 @@
 {
-    "env": {
-        "browser": true,
-        "es2020": true
-    },
-    "extends": [
-        "standard"
-    ],
-    "parser": "@typescript-eslint/parser",
+    "extends": "standard-with-typescript",
     "parserOptions": {
-        "ecmaVersion": 11,
-        "sourceType": "module"
+        "project": "./tsconfig.json" //Indica pro es a configs do typescript
     },
-    "plugins": [
-        "@typescript-eslint"
-    ],
     "rules": {
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/no-floating-promises": "off",
         "@typescript-eslint/dot-notation": "off",
-        "@typescript-eslint/consistent-type-definitions": "off",
-        "@typescript-eslint/no-unused-vars": [2, { "args": "none" }]
+        "@typescript-eslint/consistent-type-definitions": "off"
     }
 }
