@@ -36,6 +36,7 @@
   "dependencies": {
     "@types/jest": "^26.0.4",
     "jest": "^26.1.0",
+    "mongoose": "^5.9.23",
     "ts-jest": "^26.1.1"
   }
 }
