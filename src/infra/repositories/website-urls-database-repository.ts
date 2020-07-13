@@ -1,9 +1,9 @@
 import { ISaveOrReplaceWebsiteImageUrlRepository } from 'data/protocols/save-or-replace-image-src'
 import { Mongo } from '../../infra/database/mongoose-schemas'
 import { WebsiteImageModel } from '../../domain/models/website-image-model'
-import { IFindByUrlRepository } from 'data/protocols/find-by-url-repository'
+import { IFindAllWebsiteDatabaseRepository } from 'data/protocols/find-all-website-urls.repository'
 
-export class WebsiteUrlsRepository implements ISaveOrReplaceWebsiteImageUrlRepository, IFindByUrlRepository {
+export class WebsiteUrlsRepository implements ISaveOrReplaceWebsiteImageUrlRepository, IFindAllWebsiteDatabaseRepository {
   async saveOrReplace (url: string, imagesSrc: string[]): Promise<WebsiteImageModel[]> {
     const result = await Mongo.websiteUrl.update(
       { url },
@@ -24,7 +24,7 @@ export class WebsiteUrlsRepository implements ISaveOrReplaceWebsiteImageUrlRepos
     return mapperIdsModified
   }
 
-  async findByUrl (url: string): Promise<WebsiteImageModel[]> {
-    return await Mongo.websiteUrl.find({ url })
+  async findAll (): Promise<WebsiteImageModel[]> {
+    return await Mongo.websiteUrl.find()
   }
 }
