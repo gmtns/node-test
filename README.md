@@ -13,3 +13,7 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 - [ ] Salvar url imagens no banco
 - [ ] Baixar image e salvar em diretorio local
 - [ ] Opção para substituir/atualizar se a url já existir
+
+
+- Criar adapter para o express
+- Criar teste para WebHandlerAdapter
