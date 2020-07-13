@@ -9,24 +9,33 @@ Feito isso, extraia todas as imagens do link em questão via back-end e armazene
 Armazene o link da página e o caminho de cada imagem baixada em um banco de dados e exiba na tela miniaturas destas imagens.
 
 
-- API MVP 
-
-- [ ] Buscar images na url
-- [ ] Salvar url imagens no banco
-- [ ] Baixar image e salvar em diretório local
-- [ ] Opção para substituir/atualizar se a url já existir
-- [ ] Adicionar socket.io
+## BACKEND (API)
 
 
-- FRONTEND
-- [ ] Criar pagina
-- [ ] Gerenciar estado
-- [ ] Conectar web sockets
+✔️ Buscar images na url
+
+✔️ Salvar url imagens no banco
+
+✔️ Baixar image e salvar em diretório local
+
+✔️  Opção para substituir/atualizar se a url já existir
+
+❌ Adicionar socket.io
+
+
+## FRONTEND
+
+❌ Criar pagina
+
+❌ Gerenciar estado
+
+❌ Conectar web sockets
 
 
 ## Considerações ##
 
 - A api foi desenvolvida utilizando os conceitos de TDD, SOLID e DDD e alguns padrões de projeto.
+- Facilidade para refactors ou adicionar novas features
 - A api recebe uma url no corpo (método post).
 - Dado a url é feito um web scraping na página fornecida e é filtrado todas as tags imgs.
 - O atributo src da tag img é baixado e salvo na pasta images na raiz do projeto.
@@ -41,14 +50,23 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 - Execute o comando npm start na raiz do projeto
 
 - API - END POINTS: 
+
+
   (GET) http://localhost:5050/PATH_DA_IMAGES => Exibe a imagem
+  
+  
   (POST) http://localhost:5050/imageFromUrl =>  Realiza o download das imagens
+  
     Exemplo de body: 
-    {
-	    "url": "https://www.google.com/"
-    }
+	    {
+		    "url": "https://www.google.com/"
+	    }
+    
+    
   (GET) http://localhost:5050/imageFromUrl => Retorna todas as urls já salvas
+  
 
 ## Scripts
   npm run start (executa o servidor)
+  
   npm run test:unit ( executa os testes unitários)
