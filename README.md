@@ -12,7 +12,7 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 ## BACKEND (API)
 
 
-✔️ Buscar images na url
+✔️ Buscar imagens na url
 
 ✔️ Salvar url imagens no banco
 
@@ -52,7 +52,7 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 - API - END POINTS: 
 
 
-  (GET) http://localhost:5050/PATH_DA_IMAGES => Exibe a imagem
+  (GET) http://localhost:5050/PATH_DA_IMAGENS => Exibe a imagem
   
   
   (POST) http://localhost:5050/imageFromUrl =>  Realiza o download das imagens
@@ -64,6 +64,7 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
     
     
   (GET) http://localhost:5050/imageFromUrl => Retorna todas as urls já salvas
+
   
 
 ## Scripts
