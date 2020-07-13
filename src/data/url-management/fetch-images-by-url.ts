@@ -1,16 +1,14 @@
-import { IFetchWebsiteUrl } from 'domain/url-management/fetch-website-url'
-import { WebsiteImageModel } from 'domain/models/website-image-model'
-import { IFetchImagesSrcFromUrlRepository } from 'data/protocols/fetch-image-src-from-url'
 import { IFindByUrlRepository } from 'data/protocols/find-by-url-repository'
-import { ISaveOrReplaceWebsiteImageUrl } from 'data/protocols/save-or-replace-image-src'
-import { IDownloadImagesFromSrcRepository } from 'data/protocols/dowloand-image-from-src'
+import { IWebHandler } from 'data/protocols/libs/web-hander/web-handler'
+import { ISaveOrReplaceWebsiteImageUrlRepository } from 'data/protocols/save-or-replace-image-src'
+import { WebsiteImageModel } from 'domain/models/website-image-model'
+import { IFetchWebsiteUrl } from 'domain/url-management/fetch-website-url'
 
 export class FetchImagesByUrl implements IFetchWebsiteUrl {
   constructor (
     private readonly findByUrl: IFindByUrlRepository,
-    private readonly imagesFromUrl: IFetchImagesSrcFromUrlRepository,
-    private readonly saveOrReplaceImage: ISaveOrReplaceWebsiteImageUrl,
-    private readonly downloadSrcImages: IDownloadImagesFromSrcRepository
+    private readonly saveOrReplaceImage: ISaveOrReplaceWebsiteImageUrlRepository,
+    private readonly webHandler: IWebHandler
   ) {
 
   }
@@ -24,13 +22,7 @@ export class FetchImagesByUrl implements IFetchWebsiteUrl {
       }
     }
 
-    const imagesUrl = await this.imagesFromUrl.getAllImagesSrc(url)
-
-    if (!imagesUrl.length) {
-      return null
-    }
-
-    const localPaths = await this.downloadSrcImages.downloadImages(imagesUrl)
+    const localPaths = await this.webHandler.downloadImagemFrom(url)
 
     if (!localPaths.length) {
       return null
