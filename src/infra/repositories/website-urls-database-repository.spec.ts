@@ -34,7 +34,7 @@ describe('WebsiteUrlsRepository', () => {
   })
 
   describe('SaveOrReplace', () => {
-    test('should return a WebsiteImageModel if succeds', async () => {
+    test('should return a WebsiteImageModel if succeeds', async () => {
       const sut = sutFactory()
       await Mongo.websiteUrl.create(fakeWebsiteModel)
       const result = await sut.saveOrReplace(fakeUrlParam, fakeLocalImagePath)
@@ -71,12 +71,11 @@ describe('WebsiteUrlsRepository', () => {
   })
 
   describe('FindByUrl', () => {
-    test('should return a WebsiteImageModel if succeds', async () => {
+    test('should return a WebsiteImageModel if succeeds', async () => {
       const sut = sutFactory()
       await Mongo.websiteUrl.create(fakeWebsiteModel)
-      const result = await sut.findByUrl(fakeWebsiteModel.url)
+      const result = await sut.findAll()
       expect(result[0].localImagesPath[0]).toEqual(fakeWebsiteModel.localImagesPath[0])
-      expect(result[0].url).toEqual(fakeWebsiteModel.url)
     })
 
     test('should throws if Mongo find throws', async () => {
@@ -84,14 +83,13 @@ describe('WebsiteUrlsRepository', () => {
       jest.spyOn(Mongo.websiteUrl, 'find').mockImplementationOnce((): any => {
         throw new Error()
       })
-      const result = sut.findByUrl(fakeWebsiteModel.url)
+      const result = sut.findAll()
       await expect(result).rejects.toThrow()
     })
 
-    test('should return a empty array if url not found', async () => {
+    test('should return a empty array if not found any website', async () => {
       const sut = sutFactory()
-      await Mongo.websiteUrl.create(fakeWebsiteModel)
-      const result = await sut.findByUrl('invalid url')
+      const result = await sut.findAll()
       expect(result).toEqual([])
     })
   })
