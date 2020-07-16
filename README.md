@@ -28,7 +28,7 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 ✔️ Adicionar socket.io
 
 
-## FRONTEND
+## FRONTEND (VUE JS)
 
 ✔️ Criar pagina
 
