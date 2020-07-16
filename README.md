@@ -36,7 +36,7 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 
 ✔️ Conectar web sockets
 
-❌ Loadings...
+❌ Loadings e mensagens de erros.
 
 
 ## Considerações ##
