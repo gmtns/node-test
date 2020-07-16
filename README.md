@@ -75,11 +75,14 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
   
 
 ## Scripts
-  #BACKEND
+  - BACKEND
+  
   npm run start (executa o servidor)
   
   npm run test:unit ( executa os testes unitários)
   
-  #FRONTEND
+  - FRONTEND
+  
   npm install
+  
   npm run serve
