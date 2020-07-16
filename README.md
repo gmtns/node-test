@@ -28,7 +28,7 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 ✔️ Adicionar socket.io
 
 
-## FRONTEND (VUE JS)
+## FRONTEND (VUE JS + TAILWIND.CSS)
 
 ✔️ Criar pagina
 
@@ -75,6 +75,11 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
   
 
 ## Scripts
+  #BACKEND
   npm run start (executa o servidor)
   
   npm run test:unit ( executa os testes unitários)
+  
+  #FRONTEND
+  npm install
+  npm run serve
