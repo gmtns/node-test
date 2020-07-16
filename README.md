@@ -8,6 +8,11 @@ Feito isso, extraia todas as imagens do link em questão via back-end e armazene
 
 Armazene o link da página e o caminho de cada imagem baixada em um banco de dados e exiba na tela miniaturas destas imagens.
 
+## Resultado
+
+![GIF 16-07-2020 17-02-39](https://user-images.githubusercontent.com/35817813/87717728-4035c700-c787-11ea-8202-7cdb1199b42d.gif)
+
+
 
 ## BACKEND (API)
 
@@ -20,16 +25,18 @@ Armazene o link da página e o caminho de cada imagem baixada em um banco de dad
 
 ✔️  Opção para substituir/atualizar se a url já existir
 
-❌ Adicionar socket.io
+✔️ Adicionar socket.io
 
 
 ## FRONTEND
 
-❌ Criar pagina
+✔️ Criar pagina
 
-❌ Gerenciar estado
+✔️ Gerenciar estado
 
-❌ Conectar web sockets
+✔️ Conectar web sockets
+
+❌ Loadings...
 
 
 ## Considerações ##
